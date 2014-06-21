@@ -1,0 +1,5 @@
+venv/
+.DS_Store
+
+test/.urchin.log
+test/.urchin_stdout

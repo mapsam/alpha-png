@@ -1,0 +1,21 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
+{% if hex %}
+	<div class="color-brick" style="background-color:#{{ hex }}"><h1><span>#</span>{{ hex }}</h1></div>
+	<ul class="trans">
+		<li class="a100" style="background-color:#{{ hex }}">100%</li>
+		<li class="a090" style="background-color:#{{ hex }}">90%</li>
+		<li class="a080" style="background-color:#{{ hex }}">80%</li>
+		<li class="a070" style="background-color:#{{ hex }}">70%</li>
+		<li class="a060" style="background-color:#{{ hex }}">60%</li>
+		<li class="a050" style="background-color:#{{ hex }}">50%</li>
+		<li class="a040" style="background-color:#{{ hex }}">40%</li>
+		<li class="a030" style="background-color:#{{ hex }}">30%</li>
+		<li class="a020" style="background-color:#{{ hex }}">20%</li>
+		<li class="a010" style="background-color:#{{ hex }}">10%</li>
+	</ul>
+{% else %}
+  <h1>Hello World!</h1>
+{% endif %}
