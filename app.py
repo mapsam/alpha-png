@@ -20,7 +20,7 @@ def index():
     hexvalue = request.form['hexcode']
     alphavalue = request.form['alpha']
     r = hex2rgb(hexvalue)
-    a = math.ceil(255 * (alphavalue / 100))
+    a = int(math.ceil(255 * (float(alphavalue) / 100.0)))
     # make png
     array = [[r[0], r[1], r[2], a],
              [r[0], r[1], r[2], a],
@@ -34,9 +34,9 @@ def index():
 
              
     png.from_array(array, 'RGBA').save("small_smiley.png")
-    # create png file name
-    png_file_name = hexvalue + '_' + alphavalue + '.png'
-    # return png
+    # # create png file name
+    png_file_name = 'hex-' + hexvalue + '_alpha-' + alphavalue + '.png'
+    # # return png
     return send_file('small_smiley.png', attachment_filename=png_file_name, as_attachment=True)
   return render_template('base.html')
 
