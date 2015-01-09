@@ -4,6 +4,77 @@ body {
 	background-color:#fff;
 	font-family: 'Lato', sans-serif;
 }
+.outer {
+  display: table;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+/* homepage */
+#alpha-form {
+	text-align:center;
+}
+#alpha-form input,
+#alpha-form label {
+	font-size:3.5em;
+}
+#alpha-form input {
+	overflow:hidden;
+	border:none;
+	color:#333;
+	font-family:'Lato', sans-serif;
+  font-weight:300;
+  background-color:transparent;
+}
+#alpha-form label {
+	font-family:'Lato', sans-serif;
+  font-weight:600;
+	color:#999;
+	-webkit-transition: .5s;
+	   -moz-transition: .5s;
+	    -ms-transition: .5s;
+	     -o-transition: .5s;
+	        transition: .5s;
+}
+#alpha-form input:focus {
+	outline:none;
+}
+::-webkit-input-placeholder { color:#e5e5e5; }
+:-moz-placeholder { color:#e5e5e5; }
+::-moz-placeholder { color:#e5e5e5; }
+:-ms-input-placeholder { color:#e5e5e5; }
+#alpha-form input#input-hex {
+	width:4em;
+	margin-right:10px;
+}
+#alpha-form input#input-alpha {
+	text-align:right;
+	width:1.7em;
+}
+#alpha-form input[type="submit"] {
+	color:#c0c0c0;
+	background-color:transparent;
+	border:2px solid #c0c0c0;
+	border-radius:100%;
+	font-size:3em;
+	padding:.1em .3em;
+	margin-top:20px;
+	cursor:pointer;
+	opacity:0;
+	-webkit-transition: .5s;
+	   -moz-transition: .5s;
+	    -ms-transition: .5s;
+	     -o-transition: .5s;
+	        transition: .5s;
+}
+
+/* color check page */
 h1 {
 	padding:0;
 	margin:0;

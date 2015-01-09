@@ -5,6 +5,8 @@ from flask import render_template, url_for, request, send_file
 
 app = Flask(__name__)
 
+# This converts hex values into proper RGB
+# values used in creating the .png
 def hex2rgb(value):
   value = value.lstrip('#') #strip pound sign if entered
   r = '0x'+value[:2]

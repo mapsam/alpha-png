@@ -1,5 +1,5 @@
 venv/
 .DS_Store
-
+png.pyc
 test/.urchin.log
 test/.urchin_stdout
