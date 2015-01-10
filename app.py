@@ -9,9 +9,14 @@ app = Flask(__name__)
 # values used in creating the .png
 def hex2rgb(value):
   value = value.lstrip('#') #strip pound sign if entered
-  r = '0x'+value[:2]
-  g = '0x'+value[2:4]
-  b = '0x'+str(value[4:])
+  if len(value) == 3:
+    r = '0x'+value[0]+value[0]
+    g = '0x'+value[1]+value[1]
+    b = '0x'+value[2]+value[2]
+  else:
+    r = '0x'+value[:2]
+    g = '0x'+value[2:4]
+    b = '0x'+str(value[4:])
   rgb = (int(r, 16), int(g, 16), int(b, 16))
   return rgb
 
@@ -36,7 +41,7 @@ def index():
 
              
     png.from_array(array, 'RGBA').save('temp.png') # build file with new rgb array
-    png_file_name = 'hex-' + hexvalue + '_alpha-' + alphavalue + '.png' # create png file name
+    png_file_name = hexvalue + '_' + alphavalue + '.png' # create png file name
     return send_file('temp.png', attachment_filename=png_file_name, as_attachment=True) # return png
   return render_template('base.html')
 
