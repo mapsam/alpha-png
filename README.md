@@ -16,6 +16,6 @@ div {
 
 *This will eventually be an available web-app, but for now you must install locally. Sorry!*
 
-1. Start your virtualenv with `. venv/bin/activate`
-2. In command line run `python app.py`
+1. Install `png.py` with `pip install pypng`
+1. In command line run `python app.py`
 3. Head to `localhost:5000`

@@ -35,11 +35,9 @@ def index():
              [r[0], r[1], r[2], a]]
 
              
-    png.from_array(array, 'RGBA').save("small_smiley.png")
-    # # create png file name
-    png_file_name = 'hex-' + hexvalue + '_alpha-' + alphavalue + '.png'
-    # # return png
-    return send_file('small_smiley.png', attachment_filename=png_file_name, as_attachment=True)
+    png.from_array(array, 'RGBA').save('temp.png') # build file with new rgb array
+    png_file_name = 'hex-' + hexvalue + '_alpha-' + alphavalue + '.png' # create png file name
+    return send_file('temp.png', attachment_filename=png_file_name, as_attachment=True) # return png
   return render_template('base.html')
 
 @app.route('/<hex>')
